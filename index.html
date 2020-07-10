@@ -3,8 +3,95 @@
     <head>
         <title>Compras no mercado</title>
         <meta charset="UTF-8">
+        <meta name="author" content="Marcelo Júnior">
+        <meta name="description" content="Projeto desenvolvido para servir de 
+              apoio à vídeo aula sobre variáveis e funções em javascript">
+        <meta name="author" content="Javascript, variáveis, funções, exemplo">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
+        <header>
+            <h1>Compras no mercado</h1>
+        </header>
+        <main>
+            <div>
+                <div>
+                    <label>Valor R$</label>
+                    <input type="number" min="0" placeholder="0,00" step="0.01"
+                           required autofocus>
+                </div>
+                <div>
+                    <label>Compras R$</label>
+                    <input type="number" min="0" placeholder="0,00" readonly>
+                </div>
+                <div>
+                    <label>Restante R$</label>
+                    <input type="number" min="0" placeholder="0,00" readonly>
+                </div>
+            </div>
+            <section>
+                <h2>Compras</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Quantidade</th>
+                            <th>Valor unitário</th>
+                            <th>Valor total</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" value="Chocolate">
+                            </td>
+                            <td>
+                                <input type="number" value="2" min="0" step="1">
+                            </td>
+                            <td>
+                                <input type="number" value="5.50" min="0"
+                                       placeholder="0,00" step="0.01">
+                            </td>
+                            <td>11.00</td>
+                            <td>
+                                <button>
+                                    <span class="material-icons">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" value="Sorvete">
+                            </td>
+                            <td>
+                                <input type="number" value="1" min="0" step="1">
+                            </td>
+                            <td>
+                                <input type="number" value="12.00" min="0"
+                                       placeholder="0,00" step="0.01">
+                            </td>
+                            <td>12.00</td>
+                            <td>
+                                <button>
+                                    <span class="material-icons">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <button>ADICIONAR ITEM</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
     </body>
 </html>
