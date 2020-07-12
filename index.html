@@ -17,6 +17,8 @@
         <!-- Estilo do Bootstrap 4.5
         <https://getbootstrap.com/docs/4.5> -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <script src="js/resumo.js" defer></script>
     </head>
     <body>
         <!-- Cabeçalho -->
@@ -38,7 +40,7 @@
                         <div class="col-7">
                             <input class="form-control text-right" type="number"
                                    min="0" placeholder="0,00" step="0.01"
-                                   required autofocus>
+                                   required autofocus id="available-value">
                         </div>
                     </div>
 
@@ -48,7 +50,8 @@
                         <label class="col-form-label col-5">Compras R$</label>
                         <div class="col-7">
                             <input class="form-control-plaintext text-right"
-                                   type="number" min="0" value="33.00" readonly>
+                                   type="number" min="0" value="33.00" readonly
+                                   id="shopping-value">
                         </div>
                     </div>
 
@@ -57,7 +60,8 @@
                         <label class="col-form-label col-5">Restante R$</label>
                         <div class="col-7">
                             <input class="form-control-plaintext text-right"
-                                   type="number" min="0" value="-33.00" readonly>
+                                   type="number" min="0" value="-33.00" readonly
+                                   id="total-value">
                         </div>
                     </div>
                 </div>
