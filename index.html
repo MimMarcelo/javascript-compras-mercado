@@ -1,151 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Compras no mercado</title>
-        <meta charset="UTF-8">
-        <meta name="author" content="Marcelo Júnior">
-        <meta name="description" content="Projeto desenvolvido para servir de 
+
+<head>
+    <title>Compras no mercado</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Marcelo Júnior">
+    <meta name="description" content="Projeto desenvolvido para servir de 
               apoio à vídeo aula sobre variáveis e funções em javascript">
-        <meta name="keywords" content="Javascript, variáveis, funções, exemplo">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Javascript, variáveis, funções, exemplo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Estilo que permite o uso dos ícones do Material Design
+    <!-- Estilo que permite o uso dos ícones do Material Design
         <https://material.io/resources/icons> -->
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-        <!-- Estilo do Bootstrap 4.5
+    <!-- Estilo do Bootstrap 4.5
         <https://getbootstrap.com/docs/4.5> -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        
-        <script src="js/resumo.js" defer></script>
-    </head>
-    <body>
-        <!-- Cabeçalho -->
-        <header class="container-fluid border-bottom">
-            <h1 class="text-center">Compras no mercado</h1>
-        </header>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <!-- Área principal -->
-        <main class="container rounded border mt-4">
+    <script src="js/resumo.js" defer></script>
+    <script src="js/compras.js" defer></script>
+</head>
 
-            <!-- Resumo -->
-            <section class="container-fluid">
-                <h2 class="text-center mt-4">Resumo</h2>
-                <div class="row align-items-center border-bottom">
+<body>
+    <!-- Cabeçalho -->
+    <header class="container-fluid border-bottom">
+        <h1 class="text-center">Compras no mercado</h1>
+    </header>
 
-                    <!-- Valor disponível -->
-                    <div class="form-group col-md-12 col-lg row pl-4 pr-4">
-                        <label class="col-form-label col-5">Valor R$</label>
-                        <div class="col-7">
-                            <input class="form-control text-right" type="number"
-                                   min="0" placeholder="0,00" step="0.01"
-                                   required autofocus id="available-value">
-                        </div>
-                    </div>
+    <!-- Área principal -->
+    <main class="container rounded border mt-4">
 
-                    <!-- Valor das compras -->
-                    <div class="form-group col-md col-lg row pl-4 pr-4
-                         border-left border-right">
-                        <label class="col-form-label col-5">Compras R$</label>
-                        <div class="col-7">
-                            <input class="form-control-plaintext text-right"
-                                   type="number" min="0" value="33.00" readonly
-                                   id="shopping-value">
-                        </div>
-                    </div>
+        <!-- Resumo -->
+        <section class="container-fluid">
+            <h2 class="text-center mt-4">Resumo</h2>
+            <div class="row align-items-center border-bottom">
 
-                    <!-- Valor que sobra/falta -->
-                    <div class="form-group col-md col-lg row pl-4 pr-4">
-                        <label class="col-form-label col-5">Restante R$</label>
-                        <div class="col-7">
-                            <input class="form-control-plaintext text-right"
-                                   type="number" min="0" value="-33.00" readonly
-                                   id="total-value">
-                        </div>
+                <!-- Valor disponível -->
+                <div class="form-group col-md-12 col-lg row pl-4 pr-4">
+                    <label class="col-form-label col-5">Valor R$</label>
+                    <div class="col-7">
+                        <input class="form-control text-right" type="number" min="0" placeholder="0,00" step="0.01"
+                            required autofocus id="available-value">
                     </div>
                 </div>
-            </section>
 
-            <!-- Compras -->
-            <section class="container">
-                <h2 class="text-center mt-4">Compras</h2>
-                <table class="table table-bordered
+                <!-- Valor das compras -->
+                <div class="form-group col-md col-lg row pl-4 pr-4
+                         border-left border-right">
+                    <label class="col-form-label col-5">Compras R$</label>
+                    <div class="col-7">
+                        <input class="form-control-plaintext text-right" type="number" min="0" value="0.00" readonly
+                            id="shopping-value">
+                    </div>
+                </div>
+
+                <!-- Valor que sobra/falta -->
+                <div class="form-group col-md col-lg row pl-4 pr-4">
+                    <label class="col-form-label col-5">Restante R$</label>
+                    <div class="col-7">
+                        <input class="form-control-plaintext text-right" type="number" min="0" value="0.00" readonly
+                            id="total-value">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compras -->
+        <section id="compras-container" class="container">
+            <h2 class="text-center mt-4">Compras</h2>
+            <table class="table table-bordered
                        table-striped table-hover">
 
-                    <!-- Cabeçalho da tabela -->
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Valor unitário</th>
-                            <th scope="col">Valor total</th>
-                            <th scope="col">Remover</th>
-                        </tr>
-                    </thead>
+                <!-- Cabeçalho da tabela -->
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Valor unitário</th>
+                        <th scope="col">Valor total</th>
+                        <th scope="col">Remover</th>
+                    </tr>
+                </thead>
 
-                    <!-- Corpo da tabela -->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input class="form-control" type="text"
-                                       value="Chocolate">
-                            </td>
-                            <td>
-                                <input class="form-control text-center"
-                                       type="number" value="2" min="0" step="1"
-                                       placeholder="0">
-                            </td>
-                            <td>
-                                <input class="form-control text-right"
-                                       type="number" value="5.50" min="0"
-                                       step="0.01" placeholder="0.00">
-                            </td>
-                            <td>11.00</td> <!-- Total do item -->
-                            <td class="text-center">
-                                <button class="btn btn-danger btn-sm
-                                        rounded-circle">
-                                    <span class="material-icons">delete</span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input class="form-control" type="text"
-                                       value="Sorvete">
-                            </td>
-                            <td>
-                                <input class="form-control text-center"
-                                       type="number" value="1" min="0" step="1"
-                                       placeholder="0">
-                            </td>
-                            <td>
-                                <input class="form-control text-right"
-                                       type="number" value="12.00" min="0"
-                                       step="0.01" placeholder="0,00">
-                            </td>
-                            <td>12.00</td> <!-- Total do item -->
-                            <td class="text-center">
-                                <button class="btn btn-danger btn-sm
-                                        rounded-circle">
-                                    <span class="material-icons">delete</span>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
+                <!-- Corpo da tabela -->
+                <tbody>
+                    <tr>
+                        <td>
+                            <input class="form-control item-nome" type="text" value="Chocolate"
+                                placeholder="Nome do item">
+                        </td>
+                        <td>
+                            <input class="form-control text-center item-qnt" type="number" value="2" min="0" step="1"
+                                placeholder="0">
+                        </td>
+                        <td>
+                            <input class="form-control text-right item-v-unitario" type="number" value="5.50" min="0"
+                                step="0.01" placeholder="0.00">
+                        </td>
+                        <td class="item-v-total">11.00</td> <!-- Total do item -->
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-sm
+                                        rounded-circle btn-remover">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
 
-                    <!-- Rodapé da tabela -->
-                    <tfoot>
-                        <tr>
-                            <td colspan="5" class="text-center">
-                                <button class="btn btn-success btn-lg">
-                                    ADICIONAR ITEM
-                                </button>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
-        </main>
-    </body>
+                <!-- Rodapé da tabela -->
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <button id="btn-adicionar-item" class="btn btn-success btn-lg">
+                                ADICIONAR ITEM
+                            </button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+</body>
+
 </html>

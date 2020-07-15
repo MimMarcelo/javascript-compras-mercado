@@ -2,7 +2,13 @@
 /*
  * ÁREA QUE CRIA AS VARIÁVEIS PARA OS CAMPOS DO HTML
  * 
- * A palavra reservada "let" é utilizada para definição das variáveis Javascript
+ * A palavra reservada "const" é utilizada para definição das variáveis de valor constante no Javascript
+ * 
+ * Por quê não usar a palavra reservada "let"?
+ * 
+ * 1. Objetos constantes no Javascript não podem receber outros valores (imutabilidade);
+ * 2. O objeto constante não pode receber outros valores mas suas propriedades sim (usabilidade);
+ * 3. Deixar uma variável constante deixa o código mais legível, pois dessa maneira somos forçados usar variáveis para cada estado de um dado (sem ficar reutilizando uma variável para tudo!)
  * 
  * Através do objeto "document", é possível obter uma representação em
  * memória do documento HTML
@@ -10,9 +16,9 @@
  * específico dentro do DOM
  * Usa-se o caractere "#" quando a identificação for por "id"
  */
-let availableValue = document.querySelector("#available-value");
-let shoppingValue = document.querySelector("#shopping-value");
-let resumeValue = document.querySelector("#total-value");
+const availableValue = document.querySelector("#available-value");
+const shoppingValue = document.querySelector("#shopping-value");
+const resumeValue = document.querySelector("#total-value");
 
 /**
  * FUNÇÃO QUE CALCULA A DIFERENÇA ENTRE O VALOR DISPONÍVEL E O VALOR DAS COMPRAS
