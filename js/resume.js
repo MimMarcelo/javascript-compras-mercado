@@ -24,6 +24,15 @@ function resumeTotal() {
     resumeValue.value = availableValue.value - shoppingValue.value;
 }
 
+function shoppingTotal() {
+    let total = 0;
+    for(let index = 0; index < itemTotal.length; index = index + 1){
+        total = total + parseFloat(itemTotal[index].value);
+    }
+    shoppingValue.value = total;
+    resumeTotal();
+}
+
 // Definição dos eventos do DOM que acionarão funções
 //document.querySelector("#available-value").addEventListener("focusout", resumeTotal);
 availableValue.addEventListener("input", resumeTotal);
