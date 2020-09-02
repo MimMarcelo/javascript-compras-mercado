@@ -24,13 +24,34 @@ function resumeTotal() {
     resumeValue.value = availableValue.value - shoppingValue.value;
 }
 
+/**
+ * FUNÇÃO QUE CÁLCULA O VALOR TOTAL DAS COMPRAS
+ * 
+ * Utiliza uma variável global (itemTotal) definida no arquivo item-value.js
+ * 
+ * O resultado desse cálculo é atualizado no campo de "Valor das compras"
+ * @returns void
+ */
 function shoppingTotal() {
     let total = 0;
+    // Percorre todos os itens da lista
+    /*
+     * Como desenvolvido no vídeo:
+     * "Uso de parâmetros em funções e laço for em Javascript"
+     * 
     for(let index = 0; index < itemTotal.length; index = index + 1){
+        // Adiciona o valor do item ao total
         total = total + parseFloat(itemTotal[index].value);
     }
+     */
+    // Versão mais compacta do laço
+    for(let index = 0; index < itemTotal.length; index++){
+        // Adiciona o valor do item ao total
+        total += parseFloat(itemTotal[index].value);
+    }
+    
     shoppingValue.value = total;
-    resumeTotal();
+    resumeTotal(); // Atualiza o valor restante
 }
 
 // Definição dos eventos do DOM que acionarão funções

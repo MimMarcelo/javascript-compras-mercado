@@ -18,6 +18,7 @@
         <https://getbootstrap.com/docs/4.5> -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         
+        <!-- Importação dos arquivoc Javascript da aplicação -->
         <script src="js/resume.js" defer></script>
         <script src="js/item-value.js" defer></script>
     </head>
@@ -92,22 +93,22 @@
                                 <input class="form-control" type="text"
                                        value="Chocolate">
                             </td>
-                            <td>
+                            <td> <!-- Quantidade do item -->
                                 <input class="form-control text-center"
                                        type="number" value="2" min="0" step="1"
                                        placeholder="0" name="item-quantity">
                             </td>
-                            <td>
+                            <td> <!-- Valor unitário do item -->
                                 <input class="form-control text-right"
                                        type="number" value="5.50" min="0"
                                        step="0.01" placeholder="0.00"
                                        name="item-value">
                             </td>
-                            <td>
+                            <td> <!-- Valor total do item -->
                                 <input class="form-control-plaintext text-center"
                                        readonly type="number" value="11"
                                        name="item-total">
-                            </td> <!-- Total do item -->
+                            </td>
                             <td class="text-center">
                                 <button class="btn btn-danger btn-sm
                                         rounded-circle">
